@@ -1,0 +1,166 @@
+﻿<Window x:Class="Vocabulary_v._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vocabulary_v._2"
+        mc:Ignorable="d"
+        Title="Vocabulary" Height="800" Width="400">
+
+
+    <Window.Resources>
+        <Style x:Key="Text">
+            <Setter Property="Control.Background" Value="Black" />
+            <Setter Property="Control.FontFamily" Value="Verdana" />
+            <Setter Property="Control.FontStyle" Value="Italic" />
+            <Setter Property="Control.FontSize" Value="40" />
+            <Setter Property="Control.VerticalAlignment" Value="Center" />
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="BodyTextStyle" >
+            <Setter Property="Control.Background" Value="Black" />
+            <Setter Property="Control.FontFamily" Value="Tahoma" />
+            <Setter Property="Control.FontStyle" Value="Italic" />
+            <Setter Property="Control.FontSize" Value="30" />
+            <Setter Property="Control.VerticalAlignment" Value="Center" />
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="BodyButton" TargetType="Button" >
+
+            <Setter Property="Background" Value="Aqua"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button" >
+                        <Border CornerRadius="18" BorderThickness="3" Background="{TemplateBinding Background }" BorderBrush="Black"  >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="TextBoxBody" TargetType="TextBox" >
+            <Setter Property="Control.FontFamily" Value="Tahoma" />
+            <Setter Property="Control.FontStyle" Value="Normal" />
+            <Setter Property="Control.FontSize" Value="20" />
+            <Setter Property="Control.BorderBrush" Value="Black"/>
+            <Setter Property="Control.BorderThickness" Value="3"/>
+            <Setter Property="Control.Margin" Value="10"/>
+        </Style>
+
+    </Window.Resources>
+
+
+
+    <Grid x:Name="Window">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FE000505" Offset="1"/>
+                <GradientStop Color="#FF09F3F7" Offset="0.63"/>
+                <GradientStop Color="Black" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition  Height="580" />
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="WhiteSmoke"  BorderBrush="Black" BorderThickness="3" Margin="10" CornerRadius="8,8,3,3" >
+            <TextBlock  Style="{StaticResource Text}" Text="Vocabulary" HorizontalAlignment="Left" Margin="72.8,2.8,0,2.8"/>
+        </Border>
+
+        <Border Grid.Row="3" Background="WhiteSmoke"  BorderBrush="Black" BorderThickness="3" Margin="10" CornerRadius="3,3,8,8" >
+            <TextBlock  Style="{StaticResource Text}" Text="ViGiL"/>
+        </Border>
+
+        <Border Grid.Row="1" Background="WhiteSmoke"  BorderBrush="Black" BorderThickness="3" Margin="10,0,10,0" >
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="62.4"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition />
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+
+
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="3" Margin="10,10,1.5,1.5" CornerRadius="8,0,0,0"  >
+                    <TextBlock Style="{StaticResource BodyTextStyle}" >Name :</TextBlock>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="3" Margin="1.5,10,10,1.5" CornerRadius="0,8,0,0" >
+                    <TextBlock Style="{StaticResource BodyTextStyle}" >Alex</TextBlock>
+                </Border>
+
+
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="3" Margin="10,1.5,1.5,1.5" Height="55" >
+                    <TextBlock Style="{StaticResource BodyTextStyle}" >Level :</TextBlock>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="3" Margin="1.5,1.5,10,1.5" Height="55"  >
+                    <TextBlock Style="{StaticResource BodyTextStyle}" >0</TextBlock>
+                </Border>
+
+
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="3" Margin="10,1.5,1.5,10" CornerRadius="0,0,0,8" >
+                    <TextBlock Style="{StaticResource BodyTextStyle}"  >Words :</TextBlock>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="3" Margin="1.5,1.5,10,10" CornerRadius="0,0,8,0"  >
+                    <TextBlock Style="{StaticResource BodyTextStyle}" >0</TextBlock>
+                </Border>
+
+
+                <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="5"  BorderBrush="Black" BorderThickness="3" Margin=" 10,0,10,10" CornerRadius="8,8,8,8" >
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock  Grid.Row="0" Style="{StaticResource BodyTextStyle}"  >Add word</TextBlock>
+                        <TextBox x:Name="addWord" Grid.Row="1" Style="{StaticResource TextBoxBody}" ></TextBox>
+                        <TextBlock  Grid.Row="2" Style="{StaticResource BodyTextStyle}" >Add translation</TextBlock>
+                        <TextBox  x:Name="addTranslat" Grid.Row="3" Style="{StaticResource TextBoxBody}" ></TextBox>
+
+                        <TextBox Grid.Row="6" Name="add" ></TextBox>
+
+                        <Button Grid.Row="4" Margin="10,0,10,0" Style="{StaticResource BodyButton}" Content="Add to vocabulary" FontSize="30" BorderBrush="Black" Height="50" Cursor="Hand" Click="Add_to_vocabulary" />
+                        <Button Grid.Row="5" Margin="10,0,10,0" Style="{StaticResource BodyButton}" Content="Start Test" FontSize="30" Height="50" Cursor="Hand" />
+
+                    </Grid>
+                </Border>
+
+
+            </Grid>
+        </Border>
+
+
+    </Grid>
+
+</Window>
